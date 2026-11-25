@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ionique Research — Cyber Resilient Neuromorphic Systems</title>
 <meta name="description" content="Ionique Research designs and builds cyber resilient neuromorphic systems for transport, education and entertainment, data centres and AI. Noida SEZ, India.">
-<meta name="theme-color" content="#0a143c">
+<meta name="theme-color" content="#0b1433">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ionique.in/">
 <meta property="og:site_name" content="Ionique Research">
@@ -23,6 +23,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/style.css">
+<script>document.documentElement.className += ' js' + (window.matchMedia('(prefers-reduced-motion: reduce)').matches ? '' : ' has-gsap');</script>
+
+<!-- Plugins (local copies) -->
+<script src="assets/plugins/three.min.js" defer></script>
+<script src="assets/plugins/gsap.min.js" defer></script>
+<script src="assets/plugins/ScrollTrigger.min.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 </head>
 <body>
@@ -55,94 +61,64 @@
 
 <!-- ================= HERO ================= -->
 <section class="hero t-dark" id="top">
- <canvas id="neural-canvas" aria-hidden="true"></canvas>
+ <div class="hero-3d" id="hero-3d" aria-hidden="true"></div>
+ <div class="hero-shade" aria-hidden="true"></div>
  <div class="wrap">
   <div class="hero-inner">
-   <span class="eyebrow"><span class="dot"></span>Ionique Research · Noida SEZ, India</span>
+   <span class="eyebrow hero-fade"><span class="dot"></span>Ionique Research · Noida SEZ, India</span>
    <h1>
     <span class="line"><span>Cyber Resilient</span></span>
     <span class="line"><span><em>Neuromorphic</em></span></span>
     <span class="line"><span>Systems</span></span>
    </h1>
-   <p class="lead">Computing built like a network of neurons: many small units working in parallel, designed, built and secured to work as one, with no single point to fail. Ionique applies it to transport, education and entertainment, data centres and AI.</p>
-   <div class="hero-actions">
+   <p class="lead hero-fade">Computing built like a network of neurons: many small units working in parallel, designed, built and secured to work as one, with no single point to fail. Ionique applies it to transport, education and entertainment, data centres and AI.</p>
+   <div class="hero-actions hero-fade">
     <a class="btn btn-primary" href="#applications">Where it is applied
      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="btn btn-ghost" href="#contact">Talk to us</a>
    </div>
   </div>
-  <div class="hero-stats reveal">
+  <div class="hero-stats hero-fade">
    <div><b data-count="4">4</b><span>Fields of application</span></div>
    <div><b data-count="5">5</b><span>Import-substitute products</span></div>
    <div><b>2005</b><span>In the Noida SEZ since</span></div>
    <div><b>0</b><span>Single points of failure</span></div>
   </div>
  </div>
+ <div class="hero-hint" aria-hidden="true"><span></span>Scroll</div>
 </section>
 
-<!-- ================= APPLICATIONS ================= -->
-<section id="applications">
+<!-- ================= APPLICATIONS (four fields, one screen) ================= -->
+<section id="applications" class="apps">
  <div class="wrap">
   <div class="section-head split">
-   <div class="reveal">
-    <span class="label">Applications</span>
-    <h2>One architecture.<br><em>Four fields.</em></h2>
+   <div>
+    <span class="label reveal">Applications</span>
+    <h2 data-split>One architecture. <em>Four fields.</em></h2>
    </div>
-   <p class="sub reveal" style="--d:.1s">Ionique is an engineering and research company. It designs and builds cyber resilient neuromorphic systems and applies them in four fields.</p>
+   <p class="sub reveal">Ionique is an engineering and research company. It designs and builds cyber resilient neuromorphic systems and applies them in four fields.</p>
   </div>
 
   <div class="fields">
-   <a class="card field reveal" href="#transport">
-    <span class="num">01</span>
-    <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-    <span class="field-art" aria-hidden="true">
-     <svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M30 78h140" opacity=".3"/>
-      <path d="M38 72c0-8 4-12 12-14l22-14c6-4 12-6 20-6h26c8 0 14 3 19 8l12 12 14 3c6 1 9 5 9 11"/>
-      <circle cx="66" cy="74" r="10"/><circle cx="142" cy="74" r="10"/>
-      <path d="M86 44l-8 14h56l-10-12" opacity=".6"/>
-      <path class="flow" d="M10 96h180" stroke="#e9a95c" opacity=".7"/>
-     </svg>
-    </span>
-    <b>Transport</b><span class="desc">Electric vehicles, vessels and aviation components</span>
+   <a class="field-card reveal" href="#transport">
+    <img src="assets/images/photos/transport-vessel.jpg" alt="A white motor vessel cruising on blue water" loading="lazy">
+    <span class="fc-top"><span class="num">01</span><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+    <span class="fc-body"><b>Transport</b><span class="desc">Electric vehicles, vessels and aviation components</span></span>
    </a>
-   <a class="card field reveal" href="#education" style="--d:.08s">
-    <span class="num">02</span>
-    <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-    <span class="field-art" aria-hidden="true">
-     <svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
-      <path d="M100 20l40 22v44l-40 22-40-22V42z"/>
-      <path d="M60 42l40 22 40-22M100 64v44" opacity=".6"/>
-      <rect x="10" y="48" width="26" height="18" rx="4"/><rect x="164" y="48" width="26" height="18" rx="4"/>
-      <path class="flow" d="M36 57L100 64M164 57L100 64" stroke="#e9a95c"/>
-     </svg>
-    </span>
-    <b>Education and entertainment</b><span class="desc">3D video, live events and post-production</span>
+   <a class="field-card reveal" href="#education">
+    <img src="assets/images/photos/education-3d-vr.jpg" alt="A person wearing a VR headset, immersed in 3D" loading="lazy">
+    <span class="fc-top"><span class="num">02</span><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+    <span class="fc-body"><b>Education and entertainment</b><span class="desc">3D video, live events and post-production</span></span>
    </a>
-   <a class="card field reveal" href="#datacentres" style="--d:.16s">
-    <span class="num">03</span>
-    <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-    <span class="field-art" aria-hidden="true">
-     <svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.6">
-      <rect x="20" y="30" width="44" height="60" rx="6"/><rect x="78" y="18" width="44" height="84" rx="6"/><rect x="136" y="30" width="44" height="60" rx="6"/>
-      <path d="M28 44h28M28 54h28M86 32h28M86 42h28M86 52h28M144 44h28M144 54h28" opacity=".5"/>
-      <circle class="pulse-dot" cx="42" cy="78" r="3" fill="#e9a95c" stroke="none"/><circle class="pulse-dot" cx="100" cy="90" r="3" fill="#e9a95c" stroke="none" style="animation-delay:.8s"/><circle class="pulse-dot" cx="158" cy="78" r="3" fill="#e9a95c" stroke="none" style="animation-delay:1.6s"/>
-      <path class="flow" d="M64 60h14M122 60h14" stroke="#e9a95c"/>
-     </svg>
-    </span>
-    <b>Data centres</b><span class="desc">The Cyber Resilient Distributed AI Cloud</span>
+   <a class="field-card reveal" href="#datacentres">
+    <img src="assets/images/photos/datacentre-cabling.jpg" alt="Network cables plugged into a patch panel" loading="lazy">
+    <span class="fc-top"><span class="num">03</span><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+    <span class="fc-body"><b>Data centres</b><span class="desc">The Cyber Resilient Distributed AI Cloud</span></span>
    </a>
-   <a class="card field reveal" href="#ai" style="--d:.24s">
-    <span class="num">04</span>
-    <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-    <span class="field-art" aria-hidden="true">
-     <svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.6">
-      <rect x="70" y="30" width="60" height="60" rx="10"/><rect x="86" y="46" width="28" height="28" rx="4" stroke="#e9a95c"/>
-      <path d="M82 30V16M100 30V16M118 30V16M82 104V90M100 104V90M118 104V90M70 46H50M70 60H50M70 74H50M150 46h-20M150 60h-20M150 74h-20"/>
-      <circle class="pulse-dot" cx="100" cy="60" r="5" fill="#e9a95c" stroke="none"/>
-     </svg>
-    </span>
-    <b>AI applications</b><span class="desc">Material discovery, smartphone design and crypto authentication</span>
+   <a class="field-card reveal" href="#ai">
+    <img src="assets/images/photos/ai-circuit.jpg" alt="Close-up of a dense circuit board" loading="lazy">
+    <span class="fc-top"><span class="num">04</span><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+    <span class="fc-body"><b>AI applications</b><span class="desc">Material discovery, smartphone design and crypto authentication</span></span>
    </a>
   </div>
  </div>
@@ -152,54 +128,17 @@
 <section id="transport" class="t-sand">
  <div class="wrap">
   <div class="feature">
-   <div class="reveal">
-    <span class="label">Application 01</span>
-    <h2>Transport</h2>
-    <p class="sub">Research, design and development for electric vehicles and vessels, from specialty vehicle interiors to electric boat design.</p>
+   <div>
+    <span class="label reveal">Application 01</span>
+    <h2 data-split>Transport</h2>
+    <p class="sub reveal">Research, design and development for electric vehicles and vessels, from specialty vehicle interiors to electric boat design.</p>
    </div>
-   <div class="feature-visual reveal" style="--d:.1s" aria-hidden="true">
+   <div class="media-stack">
+    <figure class="media media-main" data-reveal>
+     <img src="assets/images/photos/transport-ev-charging.jpg" alt="An electric vehicle plugged in at a charging point" loading="lazy" data-speed="0.12">
+    </figure>
     <span class="chip c1"><i></i>EV · Vessel · Aviation</span>
     <span class="chip c2"><i></i>Supercapacitor power</span>
-    <svg viewBox="0 0 500 400" fill="none">
-     <defs>
-      <linearGradient id="tBody" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b4bfe6"/><stop offset="1" stop-color="#3f5bd9"/></linearGradient>
-      <radialGradient id="tGlow"><stop offset="0" stop-color="#e9a95c" stop-opacity=".5"/><stop offset="1" stop-color="#e9a95c" stop-opacity="0"/></radialGradient>
-     </defs>
-     <g stroke="#7f8fd6" stroke-opacity=".18">
-      <path d="M0 300h500M0 322h500M0 350h500M0 386h500"/>
-      <path d="M250 280L-100 400M250 280L60 400M250 280L180 400M250 280L320 400M250 280L440 400M250 280L600 400"/>
-     </g>
-     <ellipse cx="250" cy="298" rx="190" ry="22" fill="url(#tGlow)"/>
-     <g transform="translate(330 70)" stroke="#b4bfe6" stroke-width="1.5" stroke-linejoin="round" opacity=".75">
-      <path d="M0 30l90-6c8 0 12 3 12 6s-4 6-12 6L0 30z" fill="#233066"/>
-      <path d="M40 27l-14-26h10l26 25M40 33l-14 26h10l26-25M4 30l-6-14h6l10 13"/>
-      <path class="flow" d="M-80 30H-4" stroke="#e9a95c"/>
-     </g>
-     <g transform="translate(40 150)" stroke="#b4bfe6" stroke-width="1.5" stroke-linejoin="round" opacity=".8">
-      <path d="M0 40h130l-18 22H14z" fill="#1a2552"/>
-      <path d="M34 40V18h52l14 22" fill="#233066"/>
-      <path d="M44 24h16v10H44zM66 24h14v10H66z" stroke="#e9a95c" stroke-opacity=".8"/>
-      <path class="flow" d="M-30 70h200" stroke="#e9a95c" stroke-opacity=".6"/>
-     </g>
-     <g transform="translate(120 205)">
-      <path d="M10 70c0-12 6-18 18-21l40-24c10-6 20-9 34-9h56c14 0 24 5 32 13l22 21 26 5c10 2 16 8 16 18v8H10z" fill="url(#tBody)" opacity=".95"/>
-      <path d="M86 28l-18 22h108l-18-22c-6-6-12-9-22-9h-34c-8 0-12 3-16 9z" fill="#0a143c" opacity=".85"/>
-      <path d="M128 21v29" stroke="#3f5bd9" stroke-width="3"/>
-      <path d="M216 58h18" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M14 62h10" stroke="#e9a95c" stroke-width="4" stroke-linecap="round"/>
-      <circle cx="68" cy="80" r="20" fill="#0a1230" stroke="#b4bfe6" stroke-width="3"/>
-      <circle cx="68" cy="80" r="7" fill="#7f8fd6"/>
-      <circle cx="194" cy="80" r="20" fill="#0a1230" stroke="#b4bfe6" stroke-width="3"/>
-      <circle cx="194" cy="80" r="7" fill="#7f8fd6"/>
-      <path d="M100 66h40" stroke="#e9a95c" stroke-width="2" class="flow"/>
-     </g>
-     <g transform="translate(430 230)" stroke="#b4bfe6" stroke-width="1.5">
-      <rect x="0" y="0" width="30" height="70" rx="6" fill="#1a2552"/>
-      <rect x="7" y="10" width="16" height="14" rx="2" stroke="#e9a95c"/>
-      <path d="M17 33l-5 9h7l-5 9" stroke="#e9a95c" stroke-width="2"/>
-     </g>
-     <path class="flow" d="M430 270c-30 0-40 30-70 30" stroke="#e9a95c" stroke-width="2"/>
-    </svg>
    </div>
   </div>
 
@@ -210,13 +149,13 @@
     <h3>Electric vehicles</h3>
     <p>Design and development for electric vehicles, including specialty vehicle interiors.</p>
    </article>
-   <article class="card reveal" style="--d:.08s">
+   <article class="card reveal">
     <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18c2 1.5 4 1.5 6 0s4-1.5 6 0 4 1.5 6 0"/><path d="M4 14h16l-2 3H6zM8 14V9h6l3 5M12 9V4l4 2"/></svg></div>
     <span class="tag">On water and in the air</span>
     <h3>Boats, ships and aviation components</h3>
     <p>Electric boat design, and work on boats, shipbuilding and aviation components with Accurate Industrial Controls.</p>
    </article>
-   <article class="card reveal" style="--d:.16s">
+   <article class="card reveal">
     <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="15" height="10" rx="2"/><path d="M21 10v4M10 9l-2 3h3l-2 3"/></svg></div>
     <span class="tag">In the field</span>
     <h3>Power and connectivity</h3>
@@ -230,52 +169,19 @@
 <section id="education">
  <div class="wrap">
   <div class="feature reverse">
-   <div class="reveal">
-    <span class="label">Application 02</span>
-    <h2>Education and entertainment</h2>
-    <p class="sub">Stereo 3D vision for video conferencing, live events, content creation and mapping: accurate 3D from ordinary cameras, with no calibration rig.</p>
+   <div>
+    <span class="label reveal">Application 02</span>
+    <h2 data-split>Education and <em>entertainment</em></h2>
+    <p class="sub reveal">Stereo 3D vision for video conferencing, live events, content creation and mapping: accurate 3D from ordinary cameras, with no calibration rig.</p>
    </div>
-   <div class="feature-visual reveal" style="--d:.1s" aria-hidden="true">
+   <div class="media-stack collage">
+    <figure class="media media-main" data-reveal>
+     <img src="assets/images/photos/education-lecture.jpg" alt="An audience seated at a lecture" loading="lazy" data-speed="0.1">
+    </figure>
+    <figure class="media media-inset" data-reveal>
+     <img src="assets/images/photos/education-live-event.jpg" alt="Concert crowd filming a live show under stage lights" loading="lazy">
+    </figure>
     <span class="chip c1"><i></i>Stereo 3D vision</span>
-    <span class="chip c2"><i></i>No calibration rig</span>
-    <svg viewBox="0 0 500 400" fill="none">
-     <defs>
-      <radialGradient id="eGlow"><stop offset="0" stop-color="#7f8fd6" stop-opacity=".55"/><stop offset="1" stop-color="#7f8fd6" stop-opacity="0"/></radialGradient>
-      <linearGradient id="beamL" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#e9a95c" stop-opacity=".35"/><stop offset="1" stop-color="#e9a95c" stop-opacity="0"/></linearGradient>
-      <linearGradient id="beamR" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#e9a95c" stop-opacity=".35"/><stop offset="1" stop-color="#e9a95c" stop-opacity="0"/></linearGradient>
-      <clipPath id="eClip"><circle cx="250" cy="190" r="96"/></clipPath>
-     </defs>
-     <circle cx="250" cy="190" r="150" fill="url(#eGlow)"/>
-     <g class="spin-slow">
-      <circle cx="250" cy="190" r="130" stroke="#7f8fd6" stroke-opacity=".3" stroke-dasharray="2 8"/>
-     </g>
-     <ellipse cx="250" cy="190" rx="130" ry="40" stroke="#7f8fd6" stroke-opacity=".2"/>
-     <ellipse cx="250" cy="190" rx="40" ry="130" stroke="#7f8fd6" stroke-opacity=".2"/>
-     <path d="M80 318L230 210L230 228Z" fill="url(#beamL)"/>
-     <path d="M420 318L270 210L270 228Z" fill="url(#beamR)"/>
-     <g stroke="#b4bfe6" stroke-opacity=".8" stroke-width="1.2">
-      <circle cx="250" cy="190" r="96"/>
-      <ellipse cx="250" cy="190" rx="96" ry="30"/><ellipse cx="250" cy="160" rx="88" ry="26" stroke-opacity=".5"/><ellipse cx="250" cy="220" rx="88" ry="26" stroke-opacity=".5"/>
-      <ellipse cx="250" cy="190" rx="30" ry="96"/><ellipse cx="250" cy="190" rx="62" ry="96" stroke-opacity=".5"/>
-     </g>
-     <g clip-path="url(#eClip)"><rect class="scan" x="150" y="186" width="200" height="8" fill="#e9a95c" opacity=".6"/></g>
-     <g fill="#e9a95c">
-      <circle class="pulse-dot" cx="214" cy="150" r="2.5"/><circle class="pulse-dot" cx="282" cy="140" r="2.5" style="animation-delay:.4s"/><circle class="pulse-dot" cx="300" cy="210" r="2.5" style="animation-delay:.8s"/><circle class="pulse-dot" cx="226" cy="236" r="2.5" style="animation-delay:1.2s"/><circle class="pulse-dot" cx="250" cy="190" r="3.5" style="animation-delay:1.6s"/>
-     </g>
-     <g transform="translate(30 300)">
-      <rect x="0" y="0" width="60" height="36" rx="8" fill="#1a2552" stroke="#b4bfe6" stroke-width="1.5"/>
-      <circle cx="44" cy="18" r="10" fill="#0a1230" stroke="#e9a95c" stroke-width="2"/>
-      <circle cx="44" cy="18" r="3" fill="#e9a95c"/>
-      <rect x="10" y="-8" width="16" height="8" rx="2" fill="#233066" stroke="#b4bfe6"/>
-     </g>
-     <g transform="translate(410 300)">
-      <rect x="0" y="0" width="60" height="36" rx="8" fill="#1a2552" stroke="#b4bfe6" stroke-width="1.5"/>
-      <circle cx="16" cy="18" r="10" fill="#0a1230" stroke="#e9a95c" stroke-width="2"/>
-      <circle cx="16" cy="18" r="3" fill="#e9a95c"/>
-      <rect x="34" y="-8" width="16" height="8" rx="2" fill="#233066" stroke="#b4bfe6"/>
-     </g>
-     <path class="flow" d="M90 330C170 360 330 360 410 330" stroke="#7f8fd6" stroke-opacity=".6"/>
-    </svg>
    </div>
   </div>
 
@@ -286,13 +192,13 @@
     <h3>3D video conferencing</h3>
     <p>3D video conferencing for classrooms, lectures and meetings at a distance.</p>
    </article>
-   <article class="card reveal" style="--d:.08s">
+   <article class="card reveal">
     <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18a9 9 0 0 1 18 0"/><path d="M3 18h18"/><circle cx="12" cy="13" r="2"/><path d="M6 11l1 1M18 11l-1 1M12 7v1.5"/></svg></div>
     <span class="tag">Live events</span>
     <h3>Holographic capture</h3>
     <p>Holographic capture of live events using dome cameras.</p>
    </article>
-   <article class="card reveal" style="--d:.16s">
+   <article class="card reveal">
     <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></div>
     <span class="tag">Media</span>
     <h3>Rights and post-production</h3>
@@ -306,13 +212,20 @@
 <section id="datacentres" class="t-dark">
  <div class="wrap">
   <div class="section-head split">
-   <div class="reveal">
-    <span class="label">Application 03 · Data centres</span>
-    <h2>Cyber Resilient <em>Distributed AI Cloud</em></h2>
+   <div>
+    <span class="label reveal">Application 03 · Data centres</span>
+    <h2 data-split>Cyber Resilient <em>Distributed AI Cloud</em></h2>
    </div>
-   <p class="sub reveal" style="--d:.1s">Instead of one large data centre, the Ionique design links a large number of small GPU sites: in offices, campuses, studios and edge locations. Each site is a standard building block; together they behave as a single AI cloud.</p>
+   <p class="sub reveal">Instead of one large data centre, the Ionique design links a large number of small GPU sites: in offices, campuses, studios and edge locations. Each site is a standard building block; together they behave as a single AI cloud.</p>
   </div>
+ </div>
 
+ <figure class="cinema" data-reveal>
+  <img src="assets/images/photos/datacentre-racks.jpg" alt="Rows of server racks with structured cabling in a data centre" loading="lazy" data-speed="0.18">
+  <figcaption class="wrap"><span>Site-node reference design</span><b>From a single GPU to a 1,000-GPU mini data centre</b></figcaption>
+ </figure>
+
+ <div class="wrap">
   <div class="scale-wrap reveal">
    <div class="scale-tabs" role="tablist" aria-label="Site scale">
     <button class="scale-tab" type="button" role="tab" aria-selected="true" aria-controls="scale-stage" id="tab-1"><b>1 GPU</b><span>A single card in an office or studio</span></button>
@@ -332,13 +245,13 @@
     <h3>No single point of failure</h3>
     <p>Workloads move between sites. If one site is lost, the cloud carries on from the others.</p>
    </article>
-   <article class="card reveal" style="--d:.08s">
+   <article class="card reveal">
     <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
     <span class="tag">Cyber secure</span>
     <h3>Security built in</h3>
     <p>Each workload is isolated, and every site is built to the same secure reference design, with access control and monitoring from day one.</p>
    </article>
-   <article class="card reveal" style="--d:.16s">
+   <article class="card reveal">
     <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
     <span class="tag">Distributed</span>
     <h3>Close to the user</h3>
@@ -346,7 +259,7 @@
    </article>
   </div>
 
-  <div class="grid-2" style="margin-top:24px">
+  <div class="grid-2" style="margin-top:20px">
    <div class="card list-card reveal">
     <h3>What Ionique designs and builds</h3>
     <ul class="ticks">
@@ -357,7 +270,7 @@
      <li>Interface specifications, acceptance testing and documentation</li>
     </ul>
    </div>
-   <div class="card list-card reveal" style="--d:.08s">
+   <div class="card list-card reveal">
     <h3>Who it is for</h3>
     <ul class="ticks">
      <li>Organisations that want AI capacity on their own premises</li>
@@ -373,25 +286,15 @@
 <!-- ================= 04 AI ================= -->
 <section id="ai">
  <div class="wrap">
-  <div class="section-head reveal">
-   <span class="label">Application 04</span>
-   <h2>AI applications</h2>
-   <p class="sub">Three case studies show the systems at work in AI.</p>
+  <div class="section-head">
+   <span class="label reveal">Application 04</span>
+   <h2 data-split>AI applications</h2>
+   <p class="sub reveal">Three case studies show the systems at work in AI.</p>
   </div>
 
   <div class="grid-3">
    <article class="card case-card reveal">
-    <div class="case-visual" aria-hidden="true">
-     <svg viewBox="0 0 360 200" fill="none">
-      <g stroke="#7f8fd6" stroke-opacity=".55" stroke-width="1.4">
-       <path d="M120 70l60-30 60 30v60l-60 30-60-30z"/>
-       <path d="M120 70l60 30 60-30M180 100v60"/>
-       <path d="M60 100l60-30M60 100l60 30M300 100l-60-30M300 100l-60 30M180 40V10M180 160v30"/>
-      </g>
-      <g fill="#b4bfe6"><circle cx="120" cy="70" r="7"/><circle cx="240" cy="70" r="7"/><circle cx="120" cy="130" r="7"/><circle cx="240" cy="130" r="7"/><circle cx="180" cy="40" r="7"/><circle cx="180" cy="160" r="7"/></g>
-      <g fill="#e9a95c"><circle class="pulse-dot" cx="180" cy="100" r="10"/><circle class="pulse-dot" cx="60" cy="100" r="5" style="animation-delay:.6s"/><circle class="pulse-dot" cx="300" cy="100" r="5" style="animation-delay:1.2s"/></g>
-     </svg>
-    </div>
+    <figure class="case-visual"><img src="assets/images/photos/ai-materials-lab.jpg" alt="Laboratory pipette dispensing into a tray of sample tubes" loading="lazy"></figure>
     <div class="case-body">
      <span class="tag">Material discovery</span>
      <h3>AI for material discovery</h3>
@@ -399,22 +302,8 @@
      <p class="case"><small>Case study</small><strong>Go Power</strong>A supercapacitor-based power bank for mobile phones and drones.</p>
     </div>
    </article>
-   <article class="card case-card reveal" style="--d:.08s">
-    <div class="case-visual" aria-hidden="true">
-     <svg viewBox="0 0 360 200" fill="none">
-      <g transform="translate(140 22)">
-       <rect x="0" y="0" width="80" height="156" rx="16" fill="#1a2552" stroke="#b4bfe6" stroke-width="1.5"/>
-       <rect x="7" y="10" width="66" height="136" rx="10" fill="#0a143c" stroke="#7f8fd6" stroke-opacity=".5"/>
-       <rect x="30" y="16" width="20" height="5" rx="2.5" fill="#233066"/>
-       <g stroke="#e9a95c" stroke-opacity=".6"><path d="M16 44h48M16 60h30M16 76h40"/></g>
-       <rect class="scan" x="7" y="74" width="66" height="3" fill="#e9a95c" opacity=".7"/>
-      </g>
-      <g stroke="#7f8fd6" stroke-opacity=".4" stroke-dasharray="3 5">
-       <path d="M60 50h80M60 100h80M60 150h80M220 50h80M220 100h80M220 150h80"/>
-      </g>
-      <g fill="#b4bfe6"><circle cx="56" cy="50" r="4"/><circle cx="56" cy="100" r="4"/><circle cx="56" cy="150" r="4"/><circle cx="304" cy="50" r="4"/><circle cx="304" cy="100" r="4"/><circle cx="304" cy="150" r="4"/></g>
-     </svg>
-    </div>
+   <article class="card case-card reveal">
+    <figure class="case-visual"><img src="assets/images/photos/ai-smartphone.jpg" alt="A smartphone lying next to a laptop" loading="lazy"></figure>
     <div class="case-body">
      <span class="tag">Smartphone design</span>
      <h3>AI for smartphone design</h3>
@@ -422,24 +311,8 @@
      <p class="case"><small>Case study</small><strong>NIJA</strong></p>
     </div>
    </article>
-   <article class="card case-card reveal" style="--d:.16s">
-    <div class="case-visual" aria-hidden="true">
-     <svg viewBox="0 0 360 200" fill="none">
-      <g stroke="#b4bfe6" stroke-width="1.5">
-       <rect x="30" y="74" width="72" height="52" rx="10" fill="#1a2552"/>
-       <rect x="144" y="74" width="72" height="52" rx="10" fill="#233066"/>
-       <rect x="258" y="74" width="72" height="52" rx="10" fill="#1a2552"/>
-      </g>
-      <path class="flow" d="M102 100h42M216 100h42" stroke="#e9a95c" stroke-width="2"/>
-      <g stroke="#7f8fd6" stroke-opacity=".6"><path d="M44 90h44M44 102h30M158 90h44M158 102h30M272 90h44M272 102h30"/></g>
-      <g transform="translate(166 26)" stroke="#e9a95c" stroke-width="2" fill="none">
-       <rect x="0" y="16" width="28" height="22" rx="4" fill="#0a143c"/>
-       <path d="M6 16V10a8 8 0 0 1 16 0v6"/>
-       <circle class="pulse-dot" cx="14" cy="27" r="3" fill="#e9a95c" stroke="none"/>
-      </g>
-      <path d="M180 64v10" stroke="#e9a95c" stroke-dasharray="2 3"/>
-     </svg>
-    </div>
+   <article class="card case-card reveal">
+    <figure class="case-visual"><img src="assets/images/photos/ai-blockchain.jpg" alt="3D render of connected blocks forming a chain" loading="lazy"></figure>
     <div class="case-body">
      <span class="tag">Crypto authentication</span>
      <h3>AI for crypto authentication</h3>
@@ -455,11 +328,11 @@
 <section id="products" class="t-sand">
  <div class="wrap">
   <div class="section-head split">
-   <div class="reveal">
-    <span class="label">Products</span>
-    <h2>Clients <em>coming online</em></h2>
+   <div>
+    <span class="label reveal">Products</span>
+    <h2 data-split>Clients <em>coming online</em></h2>
    </div>
-   <p class="sub reveal" style="--d:.1s">Five import-substitute products, Indian alternatives to imports, coming online with Ionique's clients.</p>
+   <p class="sub reveal">Five import-substitute products, Indian alternatives to imports, coming online with Ionique's clients.</p>
   </div>
 
   <div class="bento">
@@ -469,13 +342,13 @@
     <h3>3D video conferencing and holographic capture</h3>
     <p>3D video conferencing in the class of HP Dimension, and holographic capture of live events using dome cameras.</p>
    </article>
-   <article class="card reveal" style="--d:.08s">
+   <article class="card reveal">
     <div class="product-top"><span class="tag">Go Power</span><span class="product-index">P/02</span></div>
     <div class="product-mark">GP</div>
     <h3>Supercapacitor power bank</h3>
     <p>A supercapacitor-based power bank for mobile phones and drones that can be charged at an EV charger.</p>
    </article>
-   <article class="card reveal" style="--d:.16s">
+   <article class="card reveal">
     <div class="product-top"><span class="tag">Cyber Kyro</span><span class="product-index">P/03</span></div>
     <div class="product-mark">CK</div>
     <h3>Hyper-secure smartphone</h3>
@@ -487,7 +360,7 @@
     <h3>Distributed data centre solutions</h3>
     <p>Distributed data centre solutions with an indigenous alternative to CUDA and Kubernetes, for on-premises inference, 3D rendering and massively parallel training.</p>
    </article>
-   <article class="card reveal" style="--d:.08s">
+   <article class="card reveal">
     <div class="product-top"><span class="tag">Batua</span><span class="product-index">P/05</span></div>
     <div class="product-mark">BT</div>
     <h3>Blockchain engine</h3>
@@ -504,11 +377,12 @@
 
 <!-- ================= PARTNERS ================= -->
 <section id="partners" class="partners t-blue">
+ <div class="partners-bg" aria-hidden="true"><img src="assets/images/photos/global-earth.jpg" alt="" loading="lazy" data-speed="0.2"></div>
  <div class="wrap">
-  <div class="section-head reveal">
-   <span class="label">Partners</span>
-   <h2>Strategic partnerships</h2>
-   <p class="sub">Ionique works with partners who take its engineering into their own sectors and markets.</p>
+  <div class="section-head">
+   <span class="label reveal">Partners</span>
+   <h2 data-split>Strategic partnerships</h2>
+   <p class="sub reveal">Ionique works with partners who take its engineering into their own sectors and markets.</p>
   </div>
   <div class="grid-2">
    <article class="card partner-card reveal">
@@ -517,7 +391,7 @@
     <h3>Boats, shipbuilding and aviation</h3>
     <p>Partner for boats, shipbuilding and aviation components.</p>
    </article>
-   <article class="card partner-card reveal" style="--d:.08s">
+   <article class="card partner-card reveal">
     <span class="tag">Strategic partner</span>
     <div class="partner-name">Go Anytime</div>
     <h3>Europe and global luxury</h3>
@@ -531,16 +405,20 @@
 <section id="about">
  <div class="wrap">
   <div class="about-grid">
-   <div class="reveal">
-    <span class="label">About</span>
-    <h2>About Ionique Research</h2>
-    <p class="sub">Ionique Research Limited is a unit in the Noida Special Economic Zone, India, since 2005. It exports engineering, research and development services from India, and its teams work with international partners on long-term programmes.</p>
+   <div>
+    <span class="label reveal">About</span>
+    <h2 data-split>About Ionique Research</h2>
+    <p class="sub reveal">Ionique Research Limited is a unit in the Noida Special Economic Zone, India, since 2005. It exports engineering, research and development services from India, and its teams work with international partners on long-term programmes.</p>
    </div>
-   <div class="since reveal" style="--d:.1s">
-    <span class="ring" aria-hidden="true"></span>
-    <small>Noida Special Economic Zone</small>
-    <div class="year">2005</div>
-    <p>Engineering, research and development services, exported from India.</p>
+   <div class="about-media">
+    <figure class="media" data-reveal>
+     <img src="assets/images/photos/about-team.jpg" alt="An engineering team working together on laptops around a table" loading="lazy" data-speed="0.1">
+    </figure>
+    <div class="since reveal">
+     <small>Noida Special Economic Zone</small>
+     <div class="year">2005</div>
+     <p>Engineering, research and development services, exported from India.</p>
+    </div>
    </div>
   </div>
   <div class="grid-3">
@@ -549,12 +427,12 @@
     <h3>Engineering from India</h3>
     <p>Research, design and software development delivered from Noida.</p>
    </article>
-   <article class="card pillar reveal" style="--d:.08s">
+   <article class="card pillar reveal">
     <span class="num">— 02</span>
     <h3>Long-term programmes</h3>
     <p>Work is scoped, delivered and accepted in defined modules.</p>
    </article>
-   <article class="card pillar reveal" style="--d:.16s">
+   <article class="card pillar reveal">
     <span class="num">— 03</span>
     <h3>Partnership first</h3>
     <p>Long-standing relationships, built on trust and delivery.</p>
@@ -566,15 +444,15 @@
 <!-- ================= CONTACT ================= -->
 <section id="contact" class="t-dark">
  <div class="wrap">
-  <div class="contact-panel reveal">
+  <div class="contact-panel">
    <div>
-    <span class="label">Get in touch</span>
-    <h2>Contact</h2>
-    <p class="intro">For neuromorphic systems, the AI cloud, partnerships or any of our applications, write to us.</p>
-    <a class="mail-big" href="mailto:sales@ionique.in">sales@ionique.in
+    <span class="label reveal">Get in touch</span>
+    <h2 data-split>Contact</h2>
+    <p class="intro reveal">For neuromorphic systems, the AI cloud, partnerships or any of our applications, write to us.</p>
+    <a class="mail-big reveal" href="mailto:sales@ionique.in">sales@ionique.in
      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
    </div>
-   <div>
+   <div class="reveal">
     <div class="contact-list">
      <div class="contact-item">
       <div><small>Corporate enquiries</small><a href="mailto:corporate@ionique.in">corporate@ionique.in</a></div>
