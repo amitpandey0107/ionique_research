@@ -7,7 +7,7 @@ Original source IDs:
 - ai-blockchain.jpg — https://images.unsplash.com/photo-1639762681485-074b7f938ba0
 - ai-circuit.jpg — https://images.unsplash.com/photo-1518770660439-4636190af475
 - ai-materials-lab.jpg — https://images.unsplash.com/photo-1532187863486-abf9dbad1b69
-- ai-smartphone.jpg — https://images.unsplash.com/photo-1511707171634-5f897ff02aa9
+- ai-smartphone.jpg — https://images.unsplash.com/photo-1585060544812-6b45742d762f
 - datacentre-cabling.jpg — https://images.unsplash.com/photo-1544197150-b99a580bb7a8
 - datacentre-racks.jpg — https://images.unsplash.com/photo-1558494949-ef010cbdcc31
 - education-3d-vr.jpg — https://images.unsplash.com/photo-1593508512255-86ab42a8e620
